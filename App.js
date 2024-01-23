@@ -1,11 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <View style={styles.encabezado}>
+        <Text style={styles.texto}>X</Text>
+        <Text style={styles.texto}>Encabezado</Text>
+        <Text style={styles.texto}>X</Text>
+      </View>
+      <View style={styles.cuerpo}>
+        <Text>Cuerpo</Text>
+      </View>
+      <View style={styles.pie}>
+        <Text>Pie</Text>
+      </View>
     </View>
   );
 }
@@ -13,8 +22,27 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    backgroundColor: '#a7d9f3',
+    alignItems:'stretch',
     justifyContent: 'center',
   },
+  texto:{
+    color: '#fff',
+    fontSize: 30,
+    fontWeight: 'bold',
+  },
+  encabezado:{
+    flex:1.5,
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center',
+    backgroundColor:'#227edb'
+  },
+  cuerpo:{
+    flex:8
+  },
+  pie:{
+    flex:1,
+    backgroundColor:'#227edb'
+  }
 });

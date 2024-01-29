@@ -7,8 +7,7 @@ export default function App() {
       <Encabezado/>
       <Cuerpo/>
       <Pie/>
-      <Pie2 opA='M' opD={'G'} opB={'E'} opC='F'/>
-      <Pie3 op1={'C'} op2={'R'} op3={'A'} op4={'P'}/>
+    
     </View>
   );
 }
@@ -26,9 +25,9 @@ export const Login=()=>{
   return(
     <View>
       <Text>Username...</Text>
-      <TextInput placeholder='Username'/>
+      <TextInput placeholder='Username' autoComplete='off' inputMode='numeric'/>
       <Text>Password...</Text>
-      <TextInput placeholder='Password' />
+      <TextInput placeholder='Password' cursorColor={'red'} keyboardType='numeric' secureTextEntry={true} />
       <Button title='Login' />
       <Button title='Cancel'/>
     </View>

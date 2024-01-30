@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, Button, Image, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function App() {
   return (
@@ -30,6 +30,23 @@ export const Login=()=>{
       <TextInput placeholder='Password' cursorColor={'red'} keyboardType='numeric' secureTextEntry={true} />
       <Button title='Login' />
       <Button title='Cancel'/>
+      <Boton 
+      texto={'login'} 
+      logo={require('./assets/react.png')}
+      accion={()=>Alert.alert('Boton de login')}
+      colorA={'red'} colorB={'blue'}/>
+
+      <Boton 
+      texto={'cancel'} 
+      logo={require('./assets/favicon.png')}
+      accion={()=>Alert.alert('Boton de alerta ')}
+      colorA={'red'} colorB={'blue'}/>
+
+      <Boton 
+      texto={'register'} 
+      logo={require('./assets/icons8-reaccionar-nativo-50.png')} 
+      accion={()=>Alert.alert('Boton de registro')}
+      colorA={'red'} colorB={'blue'}/>
     </View>
   )
 }
@@ -78,6 +95,24 @@ export const Pie3=({op1, op2, op3,op4})=>{
   )
 }
 
+export const Boton=({texto,logo,accion,colorA,colorB})=>{
+  return(
+    <Pressable
+      style={({pressed})=>[{
+        backgroundColor:pressed?colorB:colorA,
+        margin: pressed?10:5
+      },styles.boton]}
+      onPress={accion}
+      >
+      <Image 
+      style={styles.logoB}
+      source={logo}
+      />
+      <Text style={styles.textoB} >{texto}</Text>
+    </Pressable>
+  )
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -106,5 +141,25 @@ const styles = StyleSheet.create({
     justifyContent:'space-evenly',
     alignItems:'center',
     backgroundColor:'#227edb'
+  },
+  boton:{
+    //backgroundColor:'#5affcc',
+    padding:5,
+    borderRadius:5,
+    borderColor:'black',
+    borderWidth:2,
+    //margin:3,
+    alignItems:'center',
+    flexDirection:'row',
+    justifyContent:'center'
+  },
+  textoB:{
+    color:'white',
+    fontSize:20
+  },
+  logoB:{
+    height:35,
+    width:35,
+    marginRight:7
   }
 });

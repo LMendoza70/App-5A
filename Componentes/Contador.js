@@ -11,7 +11,7 @@ export const Contador=()=>{
             <Button title="Incremento" onPress={()=>setcont(cont+1)} />
             <Text style={estilo.texto}>Contador : {cont} </Text>
             <Button title="Decremento" onPress={()=> setcont(cont-1)}/>
-            <TextInput placeholder="Valor" onChangeText={(x)=>setcont(x)}/>
+            <TextInput placeholder="Valor" onChangeText={(x)=>setcont( parseInt(x) )}/>
         </View>
     )
 }

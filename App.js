@@ -16,7 +16,7 @@ export const Encabezado=()=>{
   return(
     <View style={styles.encabezado}>
         <Text style={styles.texto}>X</Text>
-        <Text style={styles.texto}>Encabezado</Text>
+        <Text style={styles.texto}>Encabezados</Text>
         <Text style={styles.texto}>X</Text>
     </View>
   )

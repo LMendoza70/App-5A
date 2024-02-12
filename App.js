@@ -2,6 +2,7 @@ import {  StyleSheet, Text,  View } from 'react-native';
 import { Contador } from './Componentes/Contador';
 import { Calculadora } from './Componentes/Calculadora';
 import { Login } from './Componentes/Login';
+import Imc from './Componentes/imc';
 
 export default function App() {
   return (
@@ -26,7 +27,7 @@ export const Encabezado=()=>{
 export const Cuerpo=()=>{
   return(
     <View style={styles.cuerpo}>
-        <Calculadora/>
+        <Imc/>
     </View>
   )
 }
